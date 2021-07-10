@@ -5,12 +5,56 @@
  */
 package ventavehiculos;
 
+import ec.edu.espol.model.actores.*;
+import ec.edu.espol.model.usuarios.*;
+import java.util.ArrayList;
+
 /**
  *
- * @author Ginger
+ * @author Jose, Ginger
  */
 public class Main {
+    public static final String ANSI_RESET = "\u001B[0m"; //constante que permite dejar el color del texto en consola a su original
 
+    /**
+     *
+     */
+    public static final String ANSI_RED = "\u001B[31m"; //constante que permite cambiar a rojo el color del texto mostrado en consola 
+
+    /**
+     *
+     */
+    public static final String ANSI_BLUE = "\u001B[34m";
+
+    /**
+     *
+     */
+    public static final String ANSI_GREEN = "\u001B[32m";
+
+    /**
+     *
+     */
+    public static final String ANSI_NEGRITA = "\033[0;1m";
+    
+    /**
+     *
+     */
+    public static ArrayList<Comprador> compradores = new ArrayList<>();
+
+    /**
+     *
+     */
+    public static ArrayList<Vendedor> vendedores = new ArrayList<>();
+
+    /**
+     *
+     */
+    public static ArrayList<Vehiculo> vehiculos = new ArrayList<>();
+
+    /**
+     *
+     */
+    public static ArrayList<Oferta> ofertas = new ArrayList<>();
     /**
      * @param args the command line arguments
      */

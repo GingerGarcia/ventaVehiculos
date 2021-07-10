@@ -13,7 +13,7 @@ import java.util.Scanner;
 /**
  *
  *
- * @author User
+ * @author Ginger
  */
 public class Vendedor extends Usuario{
     

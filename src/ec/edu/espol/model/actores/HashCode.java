@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 /**
  *
  * 
- * @author User
+ * @author Ginger
  */
 public class HashCode {
     // Se llama al método getInstance estático con hashing SHA, método digest () llamado para calcular el resumen del mensaje de una entrada y un array de bytes de retorno

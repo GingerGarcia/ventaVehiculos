@@ -91,24 +91,24 @@ public class ManejadorMain {
                 System.out.println(ANSI_RED+"**Vendedor ya existe, no ha sido creado ninguno nuevo**"+ANSI_RESET);
     }
     
-        private static void vendedor_Op2(){
-            char continuar = 'S';
-             Vendedor vendedor = ManejadorVendedor.inicioSesionVendedor();
-            if (vendedor!=null){
-                TipoVehiculo tp = ManejadorVehiculo.elegirTipoVehiculo();
-                Vehiculo vehiculo;
+    private static void vendedor_Op2(){
+        char continuar = 'S';
+         Vendedor vendedor = ManejadorVendedor.inicioSesionVendedor();
+        if (vendedor!=null){
+            TipoVehiculo tp = ManejadorVehiculo.elegirTipoVehiculo();
+            Vehiculo vehiculo;
             while(continuar!='N'){
                 vehiculo = Vehiculo.crearVehiculo(new Scanner(System.in),tp);                        
-            if (vehiculo!=null){
-                vehiculo.asignarDueno(vendedor);
-                file_anadirVehiculo(vehiculo, vendedor);
-                System.out.println(ANSI_GREEN+"**Vehiculo registrado**"+ANSI_RESET);
-                continuar = 'N';
-            }else{
-                System.out.println(ANSI_RED+"**Placa ya registrada**"+ANSI_RESET);
-                continuar = Validaciones.validarEntrada("¿Desea ingresar otra? [S-N]: ", 1).trim().toUpperCase().charAt(0);
-            }
-        }                                            
+                if (vehiculo!=null){
+                    vehiculo.asignarDueno(vendedor);
+                    file_anadirVehiculo(vehiculo, vendedor);
+                    System.out.println(ANSI_GREEN+"**Vehiculo registrado**"+ANSI_RESET);
+                    continuar = 'N';
+                }else{
+                    System.out.println(ANSI_RED+"**Placa ya registrada**"+ANSI_RESET);
+                    continuar = Validaciones.validarEntrada("¿Desea ingresar otra? [S-N]: ", 1).trim().toUpperCase().charAt(0);
+                }
+            }                                            
         }
     }
     
@@ -129,7 +129,40 @@ public class ManejadorMain {
         }
     }
         
-    /**
-     *
-     */
+        public static void menuComprador(){
+        int op;
+        System.out.println("Opciones del Comprador");
+        System.out.println("1.- Registrar un nuevo comprador\n" + "2.- Ofertar por un vehículo\n"+"3.- Regresar\n");
+        op = Validaciones.validarEntero("Elija una opcion: ",1,3);
+        subMenuComprador(op);
+    }
+    
+    private static void subMenuComprador(int op){
+        System.out.println("");        
+        switch(op){
+            case 1:
+                System.out.println(ANSI_BLUE+"Registrar nuevo comprador"+ANSI_RESET);
+                comprador_Op1();
+                break;
+            case 2:
+                System.out.println(ANSI_BLUE+"Ofertar por un vehiculo"+ANSI_RESET);
+                comprador_Op2();
+                break;
+            default:
+                break;
+        }
+        if(op!=3){
+            System.out.println("");
+            menuComprador();
+        }
+    }
+    
+    private static void comprador_Op1(){
+        
+    }    
+    
+    private static void comprador_Op2(){
+      
+    }
+  
 }

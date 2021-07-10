@@ -137,7 +137,11 @@ public class ManejadorMain {
             }
         }
     }
-        
+     /**
+     *
+     * 
+     * 
+     */   
         public static void menuComprador(){
         int op;
         System.out.println("Opciones del Comprador");
@@ -184,6 +188,9 @@ public class ManejadorMain {
            filtro_vehiculosEnOferta(comprador);
        }
     }
+    /**
+     *
+     */
     public static void leerVendedores(){
         try(BufferedReader br = new BufferedReader(new FileReader("archivos/vendedores.txt"))){
             String l = br.readLine();
@@ -198,6 +205,9 @@ public class ManejadorMain {
             System.out.println(ex.getMessage());
         }
     }
+    /**
+     *
+     */
     public static void leerCompradores(){
         try(BufferedReader br = new BufferedReader(new FileReader("archivos/compradores.txt"))){
             String l = br.readLine();
@@ -212,6 +222,9 @@ public class ManejadorMain {
             System.out.println(ex.getMessage());
         }
     }
+    /**
+     *
+     */
     public static void leerVehiculos(){
         try(BufferedReader br = new BufferedReader(new FileReader("archivos/vehiculos.txt"))){
             String l = br.readLine();
@@ -249,6 +262,9 @@ public class ManejadorMain {
         }
         return false;
     }
+    /**
+     *
+     */
     public static void leerOfertas(){
         
         try(BufferedReader br = new BufferedReader(new FileReader("archivos/ofertas.txt"))){
@@ -268,6 +284,11 @@ public class ManejadorMain {
             System.out.println(ex.getMessage());
         }
     }
+    /**
+     *
+     * @param o
+     * @return
+     */
     public static boolean asignarOferta_a_Vehiculo(Oferta o){        
         for(Vehiculo v: Main.vehiculos){
             if (v.getPlaca().equalsIgnoreCase(o.getVehiculo().getPlaca())){

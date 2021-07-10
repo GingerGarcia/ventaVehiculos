@@ -10,6 +10,10 @@ import ec.edu.espol.model.actores.*;
 import ec.edu.espol.model.usuarios.*;
 import static ec.edu.espol.procesos.ManejadorCompraVenta.*;
 import static ec.edu.espol.procesos.ManejadorVehiculo.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 import static ventavehiculos.Main.*;
 
@@ -81,7 +85,7 @@ public class ManejadorMain {
             menuVendedor();
         }
     }
-           private static void vendedor_Op1(){
+        private static void vendedor_Op1(){
         Vendedor vendedor = Vendedor.crearVendedor(new Scanner(System.in)); 
             if(vendedor!=null){
                 if (ManejadorVendedor.file_anadirVendedor(vendedor))
@@ -177,6 +181,33 @@ public class ManejadorMain {
            filtro_vehiculosEnOferta(comprador);
        }
     }
-    
+    public static void leerVendedores(){
+        try(BufferedReader br = new BufferedReader(new FileReader("archivos/vendedores.txt"))){
+            String l = br.readLine();
+            while((l=br.readLine())!=null){
+                String[] data = l.split(",");
+                Vendedor v = new Vendedor(data[0].trim(),data[1].trim(),new Correo(data[2].trim()),data[3].trim(),data[4].trim());
+                vendedores.add(v);
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    public static void leerCompradores(){
+        try(BufferedReader br = new BufferedReader(new FileReader("archivos/compradores.txt"))){
+            String l = br.readLine();
+            while((l=br.readLine())!=null){
+                String[] data = l.split(",");
+                Comprador c = new Comprador(data[0].trim(),data[1].trim(),new Correo(data[2].trim()),data[3].trim(),data[4].trim());
+                compradores.add(c);
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
   
 }

@@ -19,7 +19,7 @@ import static ventavehiculos.Main.*;
 /**
  *
  * 
- * @author Jose Anchundia
+ * @author Jose Anchundia, Jose Murillo
  */
 public class ManejadorVendedor {
     

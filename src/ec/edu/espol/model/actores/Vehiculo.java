@@ -13,7 +13,7 @@ import java.util.Scanner;
 /**
  *
  * 
- * @author User
+ * @author Jose Murillo, Ginger, Jose Anchundia
  */
 public class Vehiculo {
     private TipoVehiculo tipo;

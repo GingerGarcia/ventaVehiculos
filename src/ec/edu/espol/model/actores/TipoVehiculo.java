@@ -8,7 +8,7 @@ package ec.edu.espol.model.actores;
 /**
  *
  * 
- * @author User
+ * @author jose Murillo
  */
 public enum TipoVehiculo {
 

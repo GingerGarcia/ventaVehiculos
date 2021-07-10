@@ -68,9 +68,9 @@ public class Main {
       
     }
     public static void cargarDatos(){
-        //leerVendedores();
-        //leerVehiculos();
-        //leerCompradores();
-        //leerOfertas();
+        leerVendedores();
+        leerVehiculos();
+        leerCompradores();
+        leerOfertas();
     }
 }

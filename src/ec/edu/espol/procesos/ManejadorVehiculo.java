@@ -25,7 +25,7 @@ import static ventavehiculos.Main.vehiculos;
 /**
  *
  * 
- * @author Jose A
+ * @author Jose 
  */
 public class ManejadorVehiculo {
     

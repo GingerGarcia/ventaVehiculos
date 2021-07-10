@@ -6,7 +6,9 @@
  */
 package ec.edu.espol.procesos;
 
+import ec.edu.espol.model.actores.TipoVehiculo;
 import ec.edu.espol.model.actores.Vehiculo;
+import ec.edu.espol.model.usuarios.Vendedor;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,12 +17,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import static ventavehiculos.Main.ANSI_RED;
+import static ventavehiculos.Main.ANSI_RESET;
+import static ventavehiculos.Main.vehiculos;
 
 
 /**
  *
  * 
- * @author Jose Murillo
+ * @author Jose A
  */
 public class ManejadorVehiculo {
     
@@ -44,7 +49,7 @@ public class ManejadorVehiculo {
      * @return
      */
     public static Vehiculo buscarPlaca(String placa, Vendedor vendedor){
-        for (Vehiculo v:Main.vehiculos) {
+        for (Vehiculo v:vehiculos) {
             if (v.getPlaca().equalsIgnoreCase(placa) && vendedor.equals(v.getDueno()))
                 return v;
         }

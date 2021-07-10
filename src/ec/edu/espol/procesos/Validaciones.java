@@ -313,9 +313,9 @@ public class Validaciones {
     }
     
     /**
-     *
+     * 
      * @param mensaje Mensaje a mostrar al usuario en cadena previo a pedir los datos
-     * @return unobjeto de tipo tipoVehiculo que fue elegido por el usuario
+     * @return unobjeto de tipo tipoVehiculo que fue elegido por el usuario, y null en caso de que no quiera crear el objeto TipoVehiculo
      */
     public static TipoVehiculo validarTipoVehiculo(String mensaje){
         TipoVehiculo tipo = null;

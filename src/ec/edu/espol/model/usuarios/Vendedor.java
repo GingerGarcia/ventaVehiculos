@@ -5,15 +5,19 @@
  */
 package ec.edu.espol.model.usuarios;
 
+import ec.edu.espol.procesos.ManejadorMain;
 import ec.edu.espol.model.actores.Oferta;
 import ec.edu.espol.model.actores.Vehiculo;
+import ec.edu.espol.procesos.ManejadorVendedor;
+import ec.edu.espol.procesos.Validaciones;
 import java.util.ArrayList;
 import java.util.Scanner;
+import static ventavehiculos.Main.*;
 
 /**
  *
  *
- * @author Ginger
+ * @author Ginger, Anchundia
  */
 public class Vendedor extends Usuario{
     
@@ -30,15 +34,6 @@ public class Vendedor extends Usuario{
     public Vendedor(String nombres, String apellidos, Correo correo_electrico, String organizacion, String clave) {
         super(nombres, apellidos, correo_electrico, organizacion, clave);
         ventasOfertadas = new ArrayList<>();
-    }
-    
-    /**
-     *
-     * @param sc
-     * @return
-     */
-    public static Vendedor crearVendedor(Scanner sc){
-       return null;
     }
     
     /**
@@ -63,6 +58,32 @@ public class Vendedor extends Usuario{
      */
     public void setVentasOfertadas(ArrayList<Vehiculo> ventasOfertadas) {
         this.ventasOfertadas = ventasOfertadas;
+    }
+    
+    public static Vendedor crearVendedor(Scanner sc){
+        Vendedor vendedor = null;
+        String nombre = Validaciones.validarCadena("Nombres: ", 2);
+        String apellido = Validaciones.validarCadena("Apellidos: ", 2);
+        String organizacion = Validaciones.validarCadena("Organizacion: ", 2);
+        Correo correo = Validaciones.validarCorreo("Correo electronico: ");
+        boolean continuar = ManejadorMain.buscarUsuario(correo)!=null;
+        while (continuar){
+            System.out.println(ANSI_RED+"Correo ya registado"+ANSI_RESET);
+            correo = null;
+            System.out.print("¿Desea ingresar otro correo? [S(i)-N(o)]: ");
+            char siNo = sc.nextLine().toUpperCase().charAt(0);
+            if (siNo=='S'){
+                correo = Validaciones.validarCorreo("Correo electronico: ");
+                continuar = ManejadorVendedor.buscarVendedor(correo)!=null;
+            }else{
+                continuar = false;
+            }                        
+        }        
+        if(correo!=null){
+            String clave = Validaciones.validarEntrada("Clave: ",8);
+            vendedor = new Vendedor(nombre,apellido,correo,organizacion,clave);
+        }        
+        return vendedor;
     }
     
     /**

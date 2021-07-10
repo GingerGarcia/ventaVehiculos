@@ -6,6 +6,9 @@
 package ec.edu.espol.model.usuarios;
 
 import ec.edu.espol.model.actores.Oferta;
+import ec.edu.espol.model.actores.Vehiculo;
+import static ec.edu.espol.procesos.ManejadorCompraVenta.file_actualizarOfertaParaVehiculo;
+import static ec.edu.espol.procesos.ManejadorCompraVenta.file_anadirOfertas;
 import ec.edu.espol.procesos.ManejadorMain;
 import ec.edu.espol.procesos.ManejadorVendedor;
 import ec.edu.espol.procesos.Validaciones;
@@ -16,7 +19,7 @@ import static ventavehiculos.Main.*;
 /**
  *
  * 
- * @author Ginger
+ * @author Ginger, Jose M
  */
 public class Comprador extends Usuario{
     private ArrayList<Oferta> ofertas;
@@ -78,4 +81,38 @@ public class Comprador extends Usuario{
         Comprador comprador = new Comprador(nombre,apellido,correo,organizacion,clave);
         return comprador;
     }
+    
+    public Oferta ofertar(Vehiculo vehiculo){        
+        Oferta oferta = null;
+        for(Oferta o: this.ofertas){
+            if(o.getVehiculo().equals(vehiculo)){
+                oferta = o;
+                break;                
+            }            
+        }
+        double precio;
+        if(oferta == null){
+            precio = Validaciones.validarDouble("Ingrese -1 para cancelar\nPrecio a ofertar: $");    
+            if (precio==-1)
+                return oferta;
+            oferta = new Oferta(this,vehiculo, precio);
+            for(Vehiculo v: vehiculos){
+            if(vehiculo.equals(v))
+                v.agregarOferta(oferta);
+            }
+            file_anadirOfertas(oferta);
+            this.agregarOferta(oferta);
+        }else{
+            System.out.println(ANSI_RED+"Ya tiene una oferta registrada para este vehiculo"+ANSI_RESET);
+            System.out.println("Oferta actual: $"+oferta.getPrecioOfertado());            
+            precio = Validaciones.validarDouble("*Ingrese -1 para cancelar*\nNuevo precio a ofertar: $");    
+            if(precio!=-1){
+                oferta.setPrecioOfertado(precio);
+                file_actualizarOfertaParaVehiculo();
+            }
+            
+        }
+
+        return oferta;
+    }        
 }

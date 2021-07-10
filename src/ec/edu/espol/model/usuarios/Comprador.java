@@ -19,7 +19,7 @@ import static ventavehiculos.Main.*;
 /**
  *
  * 
- * @author Ginger, Jose M
+ * @author Ginger
  */
 public class Comprador extends Usuario{
     private ArrayList<Oferta> ofertas;

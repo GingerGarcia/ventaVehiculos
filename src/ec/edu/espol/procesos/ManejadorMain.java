@@ -9,12 +9,15 @@ import ec.edu.espol.model.actores.*;
 
 import ec.edu.espol.model.usuarios.*;
 import static ec.edu.espol.procesos.ManejadorCompraVenta.*;
+import static ec.edu.espol.procesos.ManejadorComprador.buscarComprador;
 import static ec.edu.espol.procesos.ManejadorVehiculo.*;
+import static ec.edu.espol.procesos.ManejadorVendedor.buscarVendedor;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import ventavehiculos.Main;
 import static ventavehiculos.Main.*;
 
 /**
@@ -208,6 +211,86 @@ public class ManejadorMain {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+    public static void leerVehiculos(){
+        try(BufferedReader br = new BufferedReader(new FileReader("archivos/vehiculos.txt"))){
+            String l = br.readLine();
+            while((l=br.readLine())!=null){
+                String[] data = l.split(",");                
+                Usuario user = buscarVendedor(new Correo(data[0].trim()));
+                TipoVehiculo tipo = TipoVehiculo.valueOf(data[1].trim());
+                int ano = Integer.parseInt(data[6].trim());
+                double recorrido = Double.parseDouble(data[7].trim());
+                String color = data[8].trim();
+                String tipoCombustible = data[9].trim();
+                String vidrios = data[10].trim();
+                String transmision = data[11].trim();
+                String traccion = data[12].trim();
+                double precio  = Double.parseDouble(data[13].trim());
+                Vehiculo v;
+                v = new Vehiculo(tipo,data[2].trim(),data[3].trim(),data[4].trim(),data[5].trim(),ano,recorrido,color,tipoCombustible,vidrios,transmision,traccion,precio);
+                v.asignarDueno(user);
+                asignarVehiculo_a_vendedor(v);
+                vehiculos.add(v);
+                
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    private static  boolean asignarVehiculo_a_vendedor(Vehiculo v){
+        for(Vendedor u: Main.vendedores){
+            if (u.getCorreo_electrico().getEmail().equalsIgnoreCase(v.getDueno().getCorreo_electrico().getEmail())){
+                u.agregarVehiculo(v);
+                return true;
+            }
+        }
+        return false;
+    }
+    public static void leerOfertas(){
+        
+        try(BufferedReader br = new BufferedReader(new FileReader("archivos/ofertas.txt"))){
+            String l = br.readLine();
+            while((l=br.readLine())!=null){
+                String[] data = l.split(",");                
+
+                Oferta oferta = new Oferta(buscarComprador(new Correo(data[0].trim())),buscarPlaca(data[1].trim()),Double.parseDouble(data[2]));
+                //Oferta oferta = new Oferta(null,buscarPlaca(data[1].trim()),Double.parseDouble(data[2]));
+                Main.ofertas.add(oferta);
+                asignarOferta_a_Vehiculo(oferta);
+                asignarOferta_a_Comprador(oferta);
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    public static boolean asignarOferta_a_Vehiculo(Oferta o){        
+        for(Vehiculo v: Main.vehiculos){
+            if (v.getPlaca().equalsIgnoreCase(o.getVehiculo().getPlaca())){
+                v.agregarOferta(o);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    /**
+     *
+     * @param o
+     * @return
+     */
+    public static boolean asignarOferta_a_Comprador(Oferta o){        
+        for(Comprador c: Main.compradores){
+            if (o.getComprador().equals(c)){
+                c.agregarOferta(o);
+                return true;
+            }
+        }
+        return false;
     }
   
 }

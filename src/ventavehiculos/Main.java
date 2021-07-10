@@ -7,6 +7,9 @@ package ventavehiculos;
 
 import ec.edu.espol.model.actores.*;
 import ec.edu.espol.model.usuarios.*;
+import static ec.edu.espol.procesos.ManejadorMain.menuComprador;
+import static ec.edu.espol.procesos.ManejadorMain.menuOpciones;
+import static ec.edu.espol.procesos.ManejadorMain.menuVendedor;
 import java.util.ArrayList;
 
 /**
@@ -44,7 +47,30 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int op = -1;        
+        cargarDatos();
+        while (op!=3){
+            op = menuOpciones();            
+            System.out.println("");
+            switch(op){
+                case 1:
+                    menuVendedor();                    
+                    break;
+                case 2:
+                    menuComprador();
+                    break;
+                default:
+                    System.out.println("Gracias :)");
+                    break;
+            }
+            System.out.println("");
+        }      
       
     }
-    
+    public static void cargarDatos(){
+        //leerVendedores();
+        //leerVehiculos();
+        //leerCompradores();
+        //leerOfertas();
+    }
 }

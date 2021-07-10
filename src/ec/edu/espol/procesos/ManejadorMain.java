@@ -8,6 +8,8 @@ package ec.edu.espol.procesos;
 import ec.edu.espol.model.actores.*;
 
 import ec.edu.espol.model.usuarios.*;
+import static ec.edu.espol.procesos.ManejadorCompraVenta.*;
+import static ec.edu.espol.procesos.ManejadorVehiculo.*;
 import java.util.Scanner;
 import static ventavehiculos.Main.*;
 
@@ -158,11 +160,23 @@ public class ManejadorMain {
     }
     
     private static void comprador_Op1(){
-        
+        Comprador comprador = Comprador.crearComprador(new Scanner(System.in));
+            if(comprador!=null){
+                if (ManejadorComprador.file_anadirComprador(comprador))
+                    System.out.println(ANSI_GREEN+"**Comprador creado exitosamente**"+ANSI_RESET);
+                else
+                    System.out.println(ANSI_RED+"**Ha ocurrido un error, comprador no creado**"+ANSI_RESET);
+            }
+            else
+                System.out.println(ANSI_RED+"**Comprador ya existe, no ha sido creado ninguno nuevo**"+ANSI_RESET);
     }    
     
     private static void comprador_Op2(){
-      
+        Comprador comprador = ManejadorComprador.inicioSesionComprador();
+       if (comprador!=null){
+           filtro_vehiculosEnOferta(comprador);
+       }
     }
+    
   
 }

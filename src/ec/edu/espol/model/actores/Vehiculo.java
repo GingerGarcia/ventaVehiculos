@@ -59,7 +59,10 @@ public class Vehiculo {
         this.recorrido = recorrido;
         this.color = color;
         this.tipoCombustible = tipoCombustible;
+        this.vidrios = vidrios;
         this.precio = precio;
+        this.traccion = traccion;
+        this.transmision = transmision;
         this.ofertas = new ArrayList<>();
     }
 

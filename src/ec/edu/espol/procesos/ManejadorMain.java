@@ -133,7 +133,7 @@ public class ManejadorMain {
                 if (oferta!=null){
                     vendedor.vender(oferta);
                 }else
-                    System.out.println(ANSI_RED+"**No ha realizado ninguna venta**"+ANSI_RESET);
+                    System.out.println(ANSI_RED+"**No ha aceptado ninguna oferta**"+ANSI_RESET);
             }
         }
     }

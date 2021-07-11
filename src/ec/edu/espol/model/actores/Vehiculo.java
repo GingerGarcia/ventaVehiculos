@@ -51,7 +51,7 @@ public class Vehiculo {
     public Vehiculo(TipoVehiculo tipo, String placa, String marca, String modelo, String tipoMotor, int año, double recorrido, String color, 
             String tipoCombustible, String vidrios, String transmision, String traccion, double precio) {
         this.tipo = tipo;
-        this.placa = placa.replace(" ", "").toUpperCase();
+        this.placa = placa.replaceAll(" ","").toUpperCase();
         this.marca = marca;
         this.modelo = modelo;
         this.tipoMotor = tipoMotor;

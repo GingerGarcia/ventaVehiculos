@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ec.edu.espol.model.actores;
-
+import ec.edu.espol.procesos.*;
 import ec.edu.espol.model.usuarios.Usuario;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -343,7 +343,31 @@ public class Vehiculo {
      * @return un objeto tipo vehiculo con los datos ingresador por el usuario
      */
     public static Vehiculo crearVehiculo(Scanner sc, TipoVehiculo tipo){
-        return null;   
+        
+        String placa_ = Validaciones.validarEntrada("Placa del vehículo: ", 3);
+        if(ManejadorVehiculo.buscarPlaca(placa_)!=null){
+            return null;
+        }
+        String marca_ = Validaciones.validarEntrada("Marca: ", 3);
+        String modelo_ = Validaciones.validarEntrada("Modelo: ", 3);
+        String tipoMotor_ = Validaciones.validarEntrada("Tipo de motor: ", 3);
+        int ano = Validaciones.validarEntero("Año: ");
+        double recorrido_ = Validaciones.validarDouble("Recorrido (km): ");
+        String color_ = Validaciones.validarCadena("Color: ",3);
+        String tipoCombustible_ = Validaciones.validarCadena("Tipo de combustible: ", 3);        
+        String vidrios_ = "No aplica";       
+        String transmision_ = "No aplica";
+        if (tipo!=TipoVehiculo.MOTOCICLETAS){
+            vidrios_ = Validaciones.validarCadena("Vidrios: ", 3);        
+            transmision_ = Validaciones.validarCadena("Transmision: ", 3);        
+        }
+        String traccion_ = "No aplica";
+        if(tipo!=TipoVehiculo.CAMIONETAS)
+            traccion_ = Validaciones.validarCadena("Traccion: ", 3);        
+        
+        double precio_ = Validaciones.validarDouble("Precio: $");        
+        Vehiculo vehiculo = new Vehiculo(tipo,placa_,marca_,modelo_,tipoMotor_,ano,recorrido_,color_,tipoCombustible_,vidrios_,transmision_,traccion_,precio_);
+        return vehiculo;    
     }
     
     /**

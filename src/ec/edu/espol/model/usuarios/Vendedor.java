@@ -96,10 +96,10 @@ public class Vendedor extends Usuario{
         this.ventasOfertadas.remove(oferta.getVehiculo());    
         
         String mensaje = "Estimado(a) "+ oferta.getComprador().getNombres() +" "+oferta.getComprador().getApellidos()+" "+
-                "\nEl usuario \'" + this.getNombres() +this.getApellidos()+
+                ":\nEl usuario \'" + this.getNombres() + " " +this.getApellidos()+
                 "\' ha aceptado su oferta para la compra del vehículo \'" +oferta.getVehiculo().getModelo()
                 +"\' con placa "+oferta.getVehiculo().getPlaca()+
-                "\nSu compra ha sido exitosa";
+                ".\nSu compra ha sido exitosa.";
         Correo correo_ = oferta.getComprador().getCorreo_electrico();
         boolean enviado = correo_.enviarCorreo("CONFIRMACION COMPRA VEHICULO", mensaje);
         if (!enviado)

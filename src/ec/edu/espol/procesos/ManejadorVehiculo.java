@@ -20,15 +20,12 @@ import java.util.List;
 import static ventavehiculos.Main.ANSI_RED;
 import static ventavehiculos.Main.ANSI_RESET;
 import static ventavehiculos.Main.vehiculos;
-
-
 /**
  *
  * 
  * @author Jose 
  */
-public class ManejadorVehiculo {
-    
+public class ManejadorVehiculo {    
     /**
      *
      * @param placa

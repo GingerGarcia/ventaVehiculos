@@ -144,7 +144,7 @@ public class ManejadorCompraVenta {
             System.out.println("Recorrido (km): "+vehiculo.getRecorrido());
             System.out.println("Color: "+vehiculo.getColor());
             System.out.println("Traccion: "+vehiculo.getTraccion());
-            System.out.println("Año: "+vehiculo.getAño());
+            System.out.println("Año: "+vehiculo.getAnio());
             System.out.println("");
             if(i==0 && tam == 1){
                 System.out.println("1.- Hacer oferta\n2.- Regresar");
@@ -242,13 +242,13 @@ public class ManejadorCompraVenta {
         if(tipo!=null){
             for(Vehiculo v: vehiculos){
                 if (v.getTipo().equals(tipo) && v.getRecorrido()>=rangoRecorrido[0] && v.getRecorrido()<=rangoRecorrido[1]
-                        && v.getAño()>=rangoAno[0] && v.getAño()<=rangoAno[1] && v.getPrecio()>=rangoPrecio[0] && v.getPrecio()<=rangoPrecio[1])
+                        && v.getAnio()>=rangoAno[0] && v.getAnio()<=rangoAno[1] && v.getPrecio()>=rangoPrecio[0] && v.getPrecio()<=rangoPrecio[1])
                     vehiculoSeleccionados.add(v);                
             }
         }else{
             for(Vehiculo v: vehiculos){
                 if ((v.getRecorrido()>=rangoRecorrido[0] && v.getRecorrido()<=rangoRecorrido[1])
-                        && (v.getAño()>=rangoAno[0] && v.getAño()<=rangoAno[1]) 
+                        && (v.getAnio()>=rangoAno[0] && v.getAnio()<=rangoAno[1]) 
                         && (v.getPrecio()>=rangoPrecio[0] && v.getPrecio()<=rangoPrecio[1]))
                     vehiculoSeleccionados.add(v);                
             }

@@ -21,7 +21,7 @@ public class Vehiculo {
     private String marca;
     private String modelo;
     private String tipoMotor;
-    private int año;
+    private int anio;
     private double recorrido;
     private String color;
     private String tipoCombustible;
@@ -55,7 +55,7 @@ public class Vehiculo {
         this.marca = marca;
         this.modelo = modelo;
         this.tipoMotor = tipoMotor;
-        this.año = año;
+        this.anio = año;
         this.recorrido = recorrido;
         this.color = color;
         this.tipoCombustible = tipoCombustible;
@@ -190,16 +190,16 @@ public class Vehiculo {
      *
      * @return
      */
-    public int getAño() {
-        return año;
+    public int getAnio() {
+        return anio;
     }
 
     /**
      *
-     * @param año
+     * @param anio
      */
-    public void setAño(int año) {
-        this.año = año;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
     /**
@@ -383,7 +383,7 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return dueno.getCorreo_electrico()+", "+tipo.toString() + ", " + placa + ", " + marca + ", " + modelo + ", " + tipoMotor + ", " + año + ", " + recorrido + ", "+ color 
+        return dueno.getCorreo_electrico()+", "+tipo.toString() + ", " + placa + ", " + marca + ", " + modelo + ", " + tipoMotor + ", " + anio + ", " + recorrido + ", "+ color 
                 + ", " + tipoCombustible + ", " + vidrios + ", " + transmision + ", " + traccion + ", " + precio;
     }
     

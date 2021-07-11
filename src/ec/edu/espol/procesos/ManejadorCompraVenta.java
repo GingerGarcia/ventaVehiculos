@@ -344,7 +344,7 @@ public class ManejadorCompraVenta {
             System.out.println(ex.getMessage());
         } 
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("archivos/ofertas.txt",false))){
-            bw.write("Comprador,placaVehiculo,precioOfertado\n");            
+            bw.write("correoComprador, placaVehiculo, precioOfertado\n");            
             for(Oferta o: ofertas){
                 bw.write(o+"\n");
             }            

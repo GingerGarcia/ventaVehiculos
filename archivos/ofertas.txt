@@ -1,4 +1,4 @@
-correoComprador, placaVehiculo, precioOfertado
-gngarcia@espol.edu.ec, KTJ-328, 49000.0
+Comprador,placaVehiculo,precioOfertado
+gngarcia@espol.edu.ec, KTJ-328, 48000.0
 gngarcia@espol.edu.ec, GHI-328, 1450.0
 gngarcia@espol.edu.ec, DEF-328, 17900.0

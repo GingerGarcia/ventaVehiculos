@@ -1,2 +1,0 @@
-Vendedor, tipo, placa, marca, modelo, tipo de motor, año, recorrido, color, tipo de combustible, vidrios, transmision, traccion, precio
-ec.edu.espol.model.usuarios.Correo@6d7b4f4c, AUTOS, gid-428, susuki, susuki forza, 3 cilindros, 1964, 15000.0, gris, gasolina, null, null, null, 4000.0

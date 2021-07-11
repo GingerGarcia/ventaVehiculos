@@ -1,2 +1,0 @@
-correoComprador, placaVehiculo, precioOfertado
-ec.edu.espol.model.usuarios.Correo@78e67e0a, gid-428, 5000.0

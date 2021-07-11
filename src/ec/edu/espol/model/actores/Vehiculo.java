@@ -40,7 +40,7 @@ public class Vehiculo {
      * @param placa
      * @param modelo
      * @param tipoMotor
-     * @param año
+     * @param anio
      * @param tipoCombustible
      * @param transmision
      * @param recorrido
@@ -48,14 +48,14 @@ public class Vehiculo {
      * @param vidrios
      * @param traccion
      */
-    public Vehiculo(TipoVehiculo tipo, String placa, String marca, String modelo, String tipoMotor, int año, double recorrido, String color, 
+    public Vehiculo(TipoVehiculo tipo, String placa, String marca, String modelo, String tipoMotor, int anio, double recorrido, String color, 
             String tipoCombustible, String vidrios, String transmision, String traccion, double precio) {
         this.tipo = tipo;
         this.placa = placa.replaceAll(" ","").toUpperCase();
         this.marca = marca;
         this.modelo = modelo;
         this.tipoMotor = tipoMotor;
-        this.anio = año;
+        this.anio = anio;
         this.recorrido = recorrido;
         this.color = color;
         this.tipoCombustible = tipoCombustible;

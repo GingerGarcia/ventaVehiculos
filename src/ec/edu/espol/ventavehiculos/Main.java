@@ -25,6 +25,7 @@ public class Main {
     public static ArrayList<Vendedor> vendedores = new ArrayList<>();
     public static ArrayList<Vehiculo> vehiculos = new ArrayList<>();
     public static ArrayList<Oferta> ofertas = new ArrayList<>();
+    
     /**
      * @param args the command line arguments
      */

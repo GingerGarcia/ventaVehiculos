@@ -13,11 +13,11 @@ import java.util.Objects;
  * @author Ginger
  */
 public abstract class Usuario {
-    private String nombres;
-    private String apellidos;
-    private Correo correo;
-    private String organizacion;    
-    private String clave;
+    protected String nombres;
+    protected String apellidos;
+    protected Correo correo;
+    protected String organizacion;    
+    protected String clave;
 
     public Usuario(String nombres, String apellidos, Correo correo_electrico, String organizacion, String clave) {
         this.nombres = nombres;

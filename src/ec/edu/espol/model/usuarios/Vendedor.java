@@ -14,7 +14,7 @@ import ec.edu.espol.procesos.ManejadorVendedor;
 import ec.edu.espol.procesos.Validaciones;
 import java.util.ArrayList;
 import java.util.Scanner;
-import static ventavehiculos.Main.*;
+import static ec.edu.espol.ventavehiculos.Main.*;
 
 /**
  *

@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import static ventavehiculos.Main.*;
+import static ec.edu.espol.ventavehiculos.Main.*;
 
 /**
  *

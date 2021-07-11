@@ -17,8 +17,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-import ventavehiculos.Main;
-import static ventavehiculos.Main.*;
+import ec.edu.espol.ventavehiculos.Main;
+import static ec.edu.espol.ventavehiculos.Main.*;
 
 /**
  *

@@ -17,9 +17,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
-import static ventavehiculos.Main.ANSI_RED;
-import static ventavehiculos.Main.ANSI_RESET;
-import static ventavehiculos.Main.vehiculos;
+import static ec.edu.espol.ventavehiculos.Main.ANSI_RED;
+import static ec.edu.espol.ventavehiculos.Main.ANSI_RESET;
+import static ec.edu.espol.ventavehiculos.Main.vehiculos;
 /**
  *
  * 

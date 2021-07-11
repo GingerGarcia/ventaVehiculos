@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import static ventavehiculos.Main.*;
+import static ec.edu.espol.ventavehiculos.Main.*;
 /**
  *
  * 

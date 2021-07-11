@@ -173,7 +173,8 @@ public class ManejadorMain {
     private static void comprador_Op1(){
         Comprador comprador = Comprador.crearComprador(new Scanner(System.in));
             if(comprador!=null){
-                if (ManejadorComprador.file_anadirComprador(comprador))
+                boolean anadirComprador = ManejadorComprador.file_anadirComprador(comprador);
+                if (anadirComprador)
                     System.out.println(ANSI_GREEN+"**Comprador creado exitosamente**"+ANSI_RESET);
                 else
                     System.out.println(ANSI_RED+"**Ha ocurrido un error, comprador no creado**"+ANSI_RESET);

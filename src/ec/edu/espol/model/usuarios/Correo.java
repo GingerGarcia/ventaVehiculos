@@ -101,6 +101,11 @@ public class Correo {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return email;
+    }
    
     
 }

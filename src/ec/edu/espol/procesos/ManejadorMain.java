@@ -204,6 +204,9 @@ public class ManejadorMain {
             System.out.println(ex.getMessage());
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getCause());
         }
     }
     /**
@@ -221,6 +224,9 @@ public class ManejadorMain {
             System.out.println(ex.getMessage());
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getCause());
         }
     }
     /**
@@ -252,6 +258,9 @@ public class ManejadorMain {
             System.out.println(ex.getMessage());
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getCause());
         }
     }
     private static  boolean asignarVehiculo_a_vendedor(Vehiculo v){
@@ -283,6 +292,9 @@ public class ManejadorMain {
             System.out.println(ex.getMessage());
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getCause());
         }
     }
     /**

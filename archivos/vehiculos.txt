@@ -1,0 +1,8 @@
+Vendedor, tipo, placa, marca, modelo, tipo de motor, año, recorrido, color, tipo de combustible, vidrios, transmision, traccion, precio
+michelle@hotmail.com, CAMIONETAS, KJH-328, Toyota, HILUX, TIPO E, 2020, 0.0, ROJO, DIESEL, POLARIZADOS, automatica, 4X4, 24000.0
+michelle@hotmail.com, CAMIONETAS, KTJ-328, Suzuki, FORZA, TIPO S, 2018, 500.0, NEGRO, GASOLINA,Blindados,manual, trasera, 50000.0
+michelle@hotmail.com, AUTOS, ABC-328, Chevrolet, AVEO, TIPO A, 2021, 100.0, GRIS, GASOLINA, NORMALES, MANUAL, No Aplica, 15000.0
+michelle@hotmail.com, AUTOS, DEF-328, Hyundai, ELANTRA, TIPO E, 2019, 50.0, ROJO, DIESEL, Polarizados, semi automatica, No Aplica, 18000.0
+michelle@hotmail.com, MOTOCICLETAS, GHI-328, Yamaha, FZ-25, Cilindrado, 2020, 300.0, AZUL, GASOLINA, null, null, null, 1500.0
+michelle@hotmail.com, MOTOCICLETAS, JKL-328, HONDA, FX-89, CMX-REBEL, 2015, 1500.0, AMARILLO, GASOLINA, null, null, null, 24000.0
+

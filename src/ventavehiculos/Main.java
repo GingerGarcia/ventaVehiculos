@@ -7,9 +7,7 @@ package ventavehiculos;
 
 import ec.edu.espol.model.actores.*;
 import ec.edu.espol.model.usuarios.*;
-import static ec.edu.espol.procesos.ManejadorMain.menuComprador;
-import static ec.edu.espol.procesos.ManejadorMain.menuOpciones;
-import static ec.edu.espol.procesos.ManejadorMain.menuVendedor;
+import static ec.edu.espol.procesos.ManejadorMain.*;
 import java.util.ArrayList;
 
 /**

@@ -33,7 +33,7 @@ public class ManejadorVehiculo {
      */
     public static Vehiculo buscarPlaca(String placa){
         for (Vehiculo v: vehiculos) {
-            if (v.getPlaca().equalsIgnoreCase(placa))
+            if (v.getPlaca().equalsIgnoreCase(placa.replace(" ", "")))
                 return v;
         }
         return null;
@@ -47,7 +47,7 @@ public class ManejadorVehiculo {
      */
     public static Vehiculo buscarPlaca(String placa, Vendedor vendedor){
         for (Vehiculo v:vehiculos) {
-            if (v.getPlaca().equalsIgnoreCase(placa) && vendedor.equals(v.getDueno()))
+            if (v.getPlaca().equalsIgnoreCase(placa.replace(" ", "")) && vendedor.equals(v.getDueno()))
                 return v;
         }
         return null;

@@ -104,7 +104,9 @@ public class Correo {
 
     @Override
     public String toString() {
+        
         return email;
+        
     }
    
     

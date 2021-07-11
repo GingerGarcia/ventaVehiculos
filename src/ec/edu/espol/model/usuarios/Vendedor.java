@@ -8,6 +8,8 @@ package ec.edu.espol.model.usuarios;
 import ec.edu.espol.procesos.ManejadorMain;
 import ec.edu.espol.model.actores.Oferta;
 import ec.edu.espol.model.actores.Vehiculo;
+import static ec.edu.espol.procesos.ManejadorCompraVenta.file_removerOfertasParaVehiculo;
+import static ec.edu.espol.procesos.ManejadorCompraVenta.file_removerVehiculoOfertado;
 import ec.edu.espol.procesos.ManejadorVendedor;
 import ec.edu.espol.procesos.Validaciones;
 import java.util.ArrayList;
@@ -91,6 +93,21 @@ public class Vendedor extends Usuario{
      * @param oferta
      */
     public void vender(Oferta oferta){        
+        this.ventasOfertadas.remove(oferta.getVehiculo());    
         
-    }
+        String mensaje = "Estimado(a) "+ oferta.getComprador().getNombres() +" "+oferta.getComprador().getApellidos()+" "+
+                "\nEl usuario " +ANSI_NEGRITA+ this.getNombres() +" "+this.getApellidos()+ANSI_RESET+
+                " ha aceptado su oferta para la compra del vehículo " +ANSI_NEGRITA+ oferta.getVehiculo().getModelo()+ANSI_RESET
+                +" con placa "+oferta.getVehiculo().getPlaca()+
+                "\nSu compra ha sido exitosa";
+        Correo correo_ = oferta.getComprador().getCorreo_electrico();
+        boolean enviado = correo_.enviarCorreo("CONFIRMACION COMPRA VEHICULO", mensaje);
+        if (!enviado)
+            System.out.println(ANSI_RED+"**No se ha podido enviar el correo de confirmacion al email del cliente**"+ANSI_RESET);
+        else
+            System.out.println(ANSI_GREEN+"**Se ha enviado los detalles de la confirmacion al cliente**"+ANSI_RESET);
+        System.out.println(ANSI_GREEN+"**Se ha realizado la venta**"+ANSI_RESET);
+        file_removerVehiculoOfertado(oferta);
+        file_removerOfertasParaVehiculo(oferta);
+     }
 }

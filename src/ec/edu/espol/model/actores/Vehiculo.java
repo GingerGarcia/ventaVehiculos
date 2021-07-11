@@ -362,8 +362,8 @@ public class Vehiculo {
             transmision_ = Validaciones.validarCadena("Transmision: ", 3);        
         }
         String traccion_ = "No aplica";
-        if(tipo!=TipoVehiculo.CAMIONETAS)
-            traccion_ = Validaciones.validarCadena("Traccion: ", 3);        
+        if(tipo==TipoVehiculo.CAMIONETAS)
+            traccion_ = Validaciones.validarEntrada("Traccion: ", 3);        
         
         double precio_ = Validaciones.validarDouble("Precio: $");        
         Vehiculo vehiculo = new Vehiculo(tipo,placa_,marca_,modelo_,tipoMotor_,ano,recorrido_,color_,tipoCombustible_,vidrios_,transmision_,traccion_,precio_);

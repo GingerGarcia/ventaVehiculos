@@ -109,10 +109,12 @@ public class Comprador extends Usuario{
             if(precio!=-1){
                 oferta.setPrecioOfertado(precio);
                 file_actualizarOfertaParaVehiculo();
-            }
-            
+            }            
         }
-
+        if(precio!=-1)
+            System.out.println(ANSI_RED+"No se ha hecho ninguna oferta"+ANSI_RESET);
+        else
+            System.out.println(ANSI_GREEN+"Se ha hecho una oferta"+ANSI_RESET);
         return oferta;
     }        
 }

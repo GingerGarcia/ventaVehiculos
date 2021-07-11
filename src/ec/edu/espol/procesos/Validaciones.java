@@ -113,7 +113,7 @@ public class Validaciones {
             if(data.trim().length()<longitud)
                 System.out.println(ANSI_RED+"Texto no ingresado (min: "+longitud+" letras)"+ANSI_RESET);
             else 
-                System.out.println(ANSI_RED+"Texto ingresado no valido"+ANSI_RESET);
+                System.out.println(ANSI_RED+"Texto ingresado no valido, solo se permiten letras"+ANSI_RESET);
             System.out.print(mensaje);
             data = sc.nextLine().trim();            
             
